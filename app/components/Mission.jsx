@@ -1,0 +1,107 @@
+import { BookOpen, Globe, Users, Lightbulb, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import FadeIn from "./fadein-wrapper"
+
+export default function OurMission() {
+  return (
+    <FadeIn>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#212245] mb-4">Our Mission</h2>
+            <p className="text-lg text-slate-600">
+              At Mustaqbal Women and Youth, we are committed to bridging the digital divide and empowering marginalized
+              communities throughout Kenya through technology, education, and community well-being.
+            </p>
+            <p className="text-lg text-slate-600 mt-4">
+              We believe in fostering integrity, promoting mental health, and ensuring every individual has the opportunity to thrive.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <img
+                src="/class.jpg"
+                alt="Digital education in action"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-[#212245]">Empowering Through Digital Literacy and Integrity</h3>
+              <p className="text-slate-600">
+                Our primary goal is to establish an ICT model campus (Tech Hub) that will serve as a beacon of digital
+                empowerment and integrity in the region. Through this initiative, we aim to:
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Provide access to high-speed internet and modern computer facilities",
+                  "Offer comprehensive digital skills training programs",
+                  "Foster innovation and entrepreneurship in the local community",
+                  "Create opportunities for remote work and digital businesses",
+                  "Promote mental health and community well-being",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <ArrowRight className="w-5 h-5 text-[#64C6C4] mr-2 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {[
+              {
+                icon: BookOpen,
+                title: "Digital Literacy",
+                description: "Comprehensive training in basic computer skills, internet navigation, and digital tools.",
+              },
+              {
+                icon: Globe,
+                title: "Global Connectivity",
+                description: "Bridging geographical barriers through high-speed internet access and online resources.",
+              },
+              {
+                icon: Users,
+                title: "Community Engagement",
+                description:
+                  "Fostering a collaborative learning environment and promoting peer-to-peer knowledge sharing, with a focus on mental health and community well-being.",
+              },
+              {
+                icon: Lightbulb,
+                title: "Innovation Hub",
+                description:
+                  "Encouraging creativity and problem-solving through technology-driven projects and initiatives.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="bg-[#F5F8FF] p-6 rounded-lg">
+                <div className="w-12 h-12 bg-[#64C6C4] rounded-full flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-xl font-semibold text-[#212245] mb-2">{item.title}</h4>
+                <p className="text-slate-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-[#212245] text-white rounded-lg p-8 md:p-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Join Us in Making a Difference</h3>
+              <p className="text-lg mb-8">
+                We believe that by providing digital education and resources, we can create lasting change and open up new
+                opportunities for the communities we serve. Your support can help us turn this vision into reality.
+              </p>
+              <Link
+                href="/get-involved"
+                className="inline-flex items-center px-6 py-3 bg-[#64C6C4] hover:bg-[#5ab3b1] text-[#212245] font-medium rounded-full transition-colors"
+              >
+                Get Involved
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </FadeIn>
+  )
+}
