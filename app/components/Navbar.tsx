@@ -17,7 +17,7 @@ const menuItems = [
   },
   { name: "Our Programs", href: "/Programs" },
   { name: "Get Involved", href: "/get-involved" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/Contact" },
 ]
 
 export default function Navbar() {
