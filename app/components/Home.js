@@ -5,12 +5,11 @@ import Mission from "./Mission";
 import Faq from "./Faq"; // added import statement for Faq component
 export default function Example() {
   return (
-    <div>
+    <div className="font-font">
       <Heroe />
      
       <Mission/>
 
-      <Impact/>
       <Faq/> 
     </div>
   );

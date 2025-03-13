@@ -46,13 +46,13 @@ export default function About() {
         <div>
           <h2 className="text-4xl font-bold text-[#212245] mb-4">Our Story</h2>
           <p className="text-lg text-slate-700 leading-relaxed">
-            Mustaqbal Women and Youth was born out of a vision to bridge the digital divide in North Eastern Kenya. Founded in 2023 by a group of passionate technologists and educators, our organization aims to empower marginalized communities through digital literacy and skills training.
+            Mustaqbal Women and Youth was born out of a vision to bridge the digital divide in Kenya. Founded in 2023 by a group of passionate technologists and educators, our organization aims to empower marginalized communities through digital literacy and skills training.
           </p>
           <p className="text-lg text-slate-700 leading-relaxed mt-4">
             We recognized that in today's rapidly evolving digital landscape, access to technology and digital skills is not just a luxury, but a necessity for economic empowerment and social progress. Our founders, having witnessed firsthand the transformative power of technology, were determined to bring these opportunities to communities that have been historically underserved.
           </p>
           <p className="text-lg text-slate-700 leading-relaxed mt-4">
-            Today, Mustaqbal Women and Youth stands as a beacon of hope and progress in North Eastern Kenya. We are committed to our mission of creating a digitally empowered community where every individual, regardless of their background, has the skills and opportunities to thrive in the modern world.
+            Today, Mustaqbal Women and Youth stands as a beacon of hope and progress in  Kenya. We are committed to our mission of creating a digitally empowered community where every individual, regardless of their background, has the skills and opportunities to thrive in the modern world.
           </p>
         </div>
 

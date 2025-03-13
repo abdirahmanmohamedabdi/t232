@@ -14,6 +14,18 @@ export default function Faq() {
       question: "What programs do you offer?",
       answer: "We offer a variety of programs focused on digital literacy, entrepreneurship, and community engagement. Our programs are designed to equip individuals with the skills needed to thrive in a digital world.",
     },
+    {
+      question: "Who can join the programs?",
+      answer: "Our programs are open to everyone, with a focus on women and youth from marginalized communities in Kenya.",
+    },
+    {
+      question: "Where are your programs located?",
+      answer: "Our programs are primarily located  Kenya, but we aim to expand to other regions as well.",
+    },
+    {
+      question: "How can I support Mustaqbal?",
+      answer: "You can support us by volunteering, donating, or spreading the word about our mission and programs.",
+    },
   ];
 
   return (
@@ -37,10 +49,10 @@ function FaqItem({ question, answer }) {
     <div className="border-b border-gray-200">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left py-4 focus:outline-none flex justify-between items-center"
+        className="w-full text-left py-6 focus:outline-none flex justify-between items-center"
       >
-        <span className="text-lg font-medium text-[#212245]">{question}</span>
-        <span className="text-lg">{isOpen ? '-' : '+'}</span>
+        <span className="text-xl font-medium text-[#212245]">{question}</span>
+        <span className="text-xl">{isOpen ? '-' : '+'}</span>
       </button>
       {isOpen && (
         <div className="pb-4 text-gray-600">

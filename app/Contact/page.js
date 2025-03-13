@@ -1,211 +1,189 @@
-"use client";
-import React, { useState, Fragment, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Transition } from "@headlessui/react";
-import { CheckCircleIcon } from "@heroicons/react/outline";
-import { XIcon } from "@heroicons/react/solid";
-import { useForm, ValidationError } from '@formspree/react';
+import { Mail, Phone, Clock, Send, MessageSquare, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
-export default function Contact() {
-  const [showNotification, setShowNotification] = useState(false);
-  const router = useRouter();
-  const [state, handleSubmit] = useForm("xrbzopvw"); // Replace with your Formspree ID
+const contactInfo = [
+  {
+    icon: <Mail className="w-6 h-6 text-blue-600" />,
+    title: "Email",
+    details: "info@mustaqbal.org",
+    action: "mailto:info@mustaqbal.org",
+    actionText: "Send Email",
+  },
+  {
+    icon: <Phone className="w-6 h-6 text-blue-600" />,
+    title: "Phone",
+    details: "+254 700 000 000",
+    action: "tel:+254700000000",
+    actionText: "Call Us",
+  },
+  {
+    icon: <Clock className="w-6 h-6 text-blue-600" />,
+    title: "Hours",
+    details: "Monday-Friday: 9AM-5PM",
+    action: null,
+    actionText: null,
+  },
+]
 
-  useEffect(() => {
-    if (state.succeeded) {
-      setShowNotification(true);
-      setTimeout(() => {
-        router.push("/");
-      }, 3000); // Redirect after 3 seconds
-    }
-  }, [state.succeeded, router]);
-
+export default function ContactPage() {
   return (
-    <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/class.jpg')" }}>
-      <div className="bg-white bg-opacity-25 p-8">
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6">
-          <div className="mb-4">
-            <label htmlFor="first-name" className="block text-sm font-font text-white">
-              First name
-            </label>
-            <input
-              type="text"
-              name="first-name"
-              id="first-name"
-              required
-              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:border-two focus:border-indigo-500 sm:text-sm"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="last-name" className="block text-sm font-font text-black text-white">
-              Last name
-            </label>
-            <input
-              type="text"
-              name="last-name"
-              id="last-name"
-              required
-              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:border-two focus:border-indigo-500 sm:text-sm"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-font text-black text-white">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:border-two focus:border-indigo-500 sm:text-sm"
-            />
-            <ValidationError prefix="Email" field="email" errors={state.errors} />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="company" className="block text-sm font-font text-black text-white">
-              Country
-            </label>
-            <input
-              type="text"
-              name="company"
-              id="company"
-              required
-              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:border-two focus:border-indigo-500 sm:text-sm"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="phone" className="block text-sm font-font text-black text-white">
-              Phone
-            </label>
-            <input
-              type="text"
-              name="phone"
-              id="phone"
-              required
-              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:border-two focus:border-indigo-500 sm:text-sm"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="how-can-we-help" className="block text-sm font-font text-black text-white">
-              How can we help you?
-            </label>
-            <textarea
-              name="how-can-we-help"
-              id="how-can-we-help"
-              rows="4"
-              required
-              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:border-two focus:border-indigo-500 sm:text-sm"
-            ></textarea>
-            <ValidationError prefix="Message" field="message" errors={state.errors} />
-          </div>
-          <fieldset className="mb-4">
-            <legend className="block text-sm font-font text-black text-white">Inquiry Type</legend>
-            <div className="mt-4 grid grid-cols-1 gap-y-4">
-              <div className="flex items-center">
-                <input
-                  id="Volunteer"
-                  name="inquiry-type"
-                  value="Volunteer"
-                  type="radio"
-                  required
-                  className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                />
-                <label htmlFor="general-inquiry" className="ml-3 block text-sm font-font text-black text-white">
-                  Volunteer
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  id="Donate"
-                  name="inquiry-type"
-                  value="Donate"
-                  type="radio"
-                  className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                />
-                <label htmlFor="technical-support" className="ml-3 block font-font text-black text-sm text-white">
-                  Donate
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  id="Partnership"
-                  name="inquiry-type"
-                  value="Partnership"
-                  type="radio"
-                  className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                />
-                <label htmlFor="feedback" className="ml-3 block text-sm font-font text-black text-white">
-                  Partnership
-                </label>
-              </div>
+    <div className="bg-[#F5F8FF] font-font min-h-screen">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-[#212245] to-[#64C6C4] py-24 md:py-36">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-20 top-20 w-96 h-96 bg-white/5 rounded-full mix-blend-overlay blur-3xl"></div>
+          <div className="absolute right-0 top-40 w-96 h-96 bg-white/10 rounded-full mix-blend-overlay blur-3xl"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-8 backdrop-blur-sm">
+              <MessageSquare className="w-4 h-4" />
+              <span>We'd Love to Hear From You</span>
             </div>
-          </fieldset>
-          <div className="mb-4">
-            <label htmlFor="how-did-you-hear-about-us" className="block text-sm font-medium font-font text-black text-white">
-              How did you hear about us?
-            </label>
-            <input
-              type="text"
-              name="how-did-you-hear-about-us"
-              id="how-did-you-hear-about-us"
-              required
-              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-two sm:text-sm"
-            />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-8 leading-tight tracking-tight">
+              Contact Us
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Have questions about our programs or want to get involved? We're here to help. Reach out to us using any
+              of the methods below.
+            </p>
           </div>
-          <button
-            type="submit"
-            disabled={state.submitting}
-            className="inline-flex justify-center py-2 px-4 border border-transparent font-font text-white shadow-sm text-sm font-medium rounded-md text-white bg-one hover:background-two focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            Submit Form
-          </button>
-          <span className="block mt-4 text-sm text-gray-700">{state.succeeded ? "Form Submitted Successfully" : ""}</span>
-        </form>
+        </div>
+      </div>
 
-        {/* Notification Component */}
-        {showNotification && (
-          <div
-            aria-live="assertive"
-            className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
-          >
-            <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
-              <Transition
-                show={showNotification}
-                as={Fragment}
-                enter="transform ease-out duration-300 transition"
-                enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
-                enterTo="translate-y-0 opacity-100 sm:translate-x-0"
-                leave="transition ease-in duration-100"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
-                  <div className="p-4">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0">
-                        <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
-                      </div>
-                      <div className="ml-3 w-0 flex-1 pt-0.5">
-                        <p className="text-sm font-medium font-font text-gray-900">Message sent Successfully!</p>
-                        <p className="mt-1 text-sm text-gray-500">We will contact you shortly...</p>
-                      </div>
-                      <div className="ml-4 flex-shrink-0 flex">
-                        <button
-                          className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 font-font focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                          onClick={() => setShowNotification(false)}
-                        >
-                          <span className="sr-only">Close</span>
-                          <XIcon className="h-5 w-5" aria-hidden="true" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+      {/* Contact Information */}
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {contactInfo.map((item, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-md p-8 text-center">
+              <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6">
+                {item.icon}
+              </div>
+              <h3 className="text-xl font-bold text-[#212245] mb-2">{item.title}</h3>
+              <p className="text-slate-600 mb-4">{item.details}</p>
+              {item.action && (
+                <a
+                  href={item.action}
+                  className="text-blue-600 font-medium hover:text-blue-800 transition-colors inline-flex items-center gap-1"
+                >
+                  {item.actionText}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Contact Form */}
+        <div className="max-w-3xl mx-auto mb-20">
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-[#212245] mb-6">Send Us a Message</h2>
+            <form className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="first-name" className="text-sm font-medium text-slate-700">
+                    First Name
+                  </label>
+                  <input
+                    id="first-name"
+                    type="text"
+                    placeholder="First Name"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  />
                 </div>
-              </Transition>
+                <div className="space-y-2">
+                  <label htmlFor="last-name" className="text-sm font-medium text-slate-700">
+                    Last Name
+                  </label>
+                  <input
+                    id="last-name"
+                    type="text"
+                    placeholder="Last Name"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium text-slate-700">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-medium text-slate-700">
+                  Subject
+                </label>
+                <select
+                  id="subject"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option value="" disabled selected>
+                    Select a subject
+                  </option>
+                  <option value="general">General Inquiry</option>
+                  <option value="volunteer">Volunteering</option>
+                  <option value="donate">Donations</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="programs">Programs</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium text-slate-700">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  placeholder="How can we help you?"
+                  rows={5}
+                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center"
+              >
+                Send Message
+                <Send className="w-4 h-4 ml-2" />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="bg-[#212245] py-20 text-white rounded-xl">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6">Stay Updated</h2>
+              <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
+                Subscribe to our newsletter to receive updates about our programs, events, and impact stories.
+              </p>
+              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="bg-white/10 border border-white/20 text-white placeholder:text-white/50 flex-grow px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
+                <button
+                  type="submit"
+                  className="bg-white text-[#212245] hover:bg-white/90 px-6 py-3 rounded-md font-medium transition-colors"
+                >
+                  Subscribe
+                </button>
+              </form>
             </div>
           </div>
-        )}
+        </div>
+
+        {/* CTA Section */}
+      
+     
       </div>
     </div>
-  );
+  )
 }
+

@@ -10,11 +10,10 @@ export default function OurMission() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#212245] mb-4">Our Mission</h2>
             <p className="text-lg text-slate-600">
-              At Mustaqbal Women and Youth, we are committed to bridging the digital divide and empowering marginalized
-              communities throughout Kenya through technology, education, and community well-being.
+              At Mustaqbal, our mission is to empower marginalized communities in  Kenya by providing them with the digital education and technology they need to succeed. We are committed to creating opportunities for women and youth to learn, innovate, and earn by building critical digital skills that bridge the gap between poverty and sustainable development. Through our programs, we aim to equip individuals with the tools to thrive in a digital world, unlocking new opportunities for economic empowerment and social advancement.
             </p>
             <p className="text-lg text-slate-600 mt-4">
-              We believe in fostering integrity, promoting mental health, and ensuring every individual has the opportunity to thrive.
+              Mustaqbal is dedicated to empowering marginalized communities  Kenya through digital education and technology. Our mission is to provide women and youth with the skills, knowledge, and opportunities to learn, innovate, and earn, bridging the gap between poverty and sustainable development. By equipping individuals with essential digital skills, we aim to foster economic empowerment, social inclusion, and long-term progress in underserved regions.
             </p>
           </div>
 
