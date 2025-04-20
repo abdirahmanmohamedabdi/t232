@@ -1,5 +1,5 @@
 import Mission from "./components/Mission";
-
+import Story from "./components/story";
 import Hero from "./components/Hero";
 export default function HomePage() {
   return (
