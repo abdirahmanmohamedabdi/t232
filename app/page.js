@@ -1,9 +1,18 @@
-import Image from "next/image";
-import Example from "./components/Home";
-export default function Home() {
+import Mission from "./components/Mission";
+import Story from "./components/Story";
+import Hero from "./components/Hero";
+export default function HomePage() {
   return (
- <div>
-  <Example/>
- </div>
+    <div>
+      <section id="home">
+       <Hero/>
+      </section>
+      <section id="Mission">
+        <Mission />
+      </section>
+      <section id="Story">
+        <Story />
+      </section>
+    </div>
   );
 }

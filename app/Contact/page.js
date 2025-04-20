@@ -155,29 +155,7 @@ export default function ContactPage() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="bg-[#212245] py-20 text-white rounded-xl">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">Stay Updated</h2>
-              <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
-                Subscribe to our newsletter to receive updates about our programs, events, and impact stories.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="bg-white/10 border border-white/20 text-white placeholder:text-white/50 flex-grow px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                <button
-                  type="submit"
-                  className="bg-white text-[#212245] hover:bg-white/90 px-6 py-3 rounded-md font-medium transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+       
 
         {/* CTA Section */}
       

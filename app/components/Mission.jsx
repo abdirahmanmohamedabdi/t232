@@ -83,22 +83,7 @@ export default function OurMission() {
             ))}
           </div>
 
-          <div className="bg-[#212245] text-white rounded-lg p-8 md:p-12">
-            <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Join Us in Making a Difference</h3>
-              <p className="text-lg mb-8">
-                We believe that by providing digital education and resources, we can create lasting change and open up new
-                opportunities for the communities we serve. Your support can help us turn this vision into reality.
-              </p>
-              <Link
-                href="/get-involved"
-                className="inline-flex items-center px-6 py-3 bg-[#64C6C4] hover:bg-[#5ab3b1] text-[#212245] font-medium rounded-full transition-colors"
-              >
-                Get Involved
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
-          </div>
+         
         </div>
       </section>
     </FadeIn>

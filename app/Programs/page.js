@@ -116,7 +116,7 @@ const programs = [
 
 export default function ProgramsPage() {
   return (
-    <div className="bg-[#F5F8FF] min-h-screen">
+    <div className="bg-[#F5F8FF] font-font min-h-screen">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-[#212245] to-[#64C6C4] py-24 md:py-36">
         <div className="absolute inset-0 overflow-hidden">

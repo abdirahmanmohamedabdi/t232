@@ -17,14 +17,14 @@ const people = [
     twitterUrl: 'https://twitter.com/mohamedosman',
     linkedinUrl: 'https://www.linkedin.com/in/mohamedosman/',
   },
-  {
-    name: 'Ahmed Mohamed',
-    role: '',
-    imageUrl: '/team/member3.jpg',
-    bio: '.',
-    twitterUrl: 'https://twitter.com/ahmedmohamed',
-    linkedinUrl: 'https://www.linkedin.com/in/ahmedmohamed/',
-  },
+  // {
+  //   name: 'Ahmed Mohamed',
+  //   role: '',
+  //   imageUrl: '/team/member3.jpg',
+  //   bio: '.',
+  //   twitterUrl: 'https://twitter.com/ahmedmohamed',
+  //   linkedinUrl: 'https://www.linkedin.com/in/ahmedmohamed/',
+  // },
 ]
 
 export default function About() {
