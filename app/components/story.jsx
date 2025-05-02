@@ -8,16 +8,21 @@ const teamMembers = [
     role: "Social Impact Professional",
     imageUrl: "/anna.jpeg",
     bio: "Anna Grabowski is a dedicated social impact professional with extensive experience in refugee resettlement and programming, education, child and youth mental health and psychosocial support (MHPSS), and sustainable food systems. With a background in program management, grantmaking, and stakeholder engagement, Anna has successfully led initiatives that enhance organizational effectiveness, foster strategic partnerships, and drive systemic change. Anna is committed to creating sustainable solutions that empower vulnerable communities. Passionate about equity, inclusion, innovation, and cross-sector collaboration, she is dedicated to advocating for impactful, community-driven change.",
-    twitterUrl: "https://twitter.com/annagrabowski",
-    linkedinUrl: "https://www.linkedin.com/in/annagrabowski/",
+   
   },
   {
     name: "Mohamed Osman",
     role: "Technology and Business Advisor",
     imageUrl: "/Mohamed.jpg",
     bio: "Mohamed Osman is a strategic and results-driven Technology and Business Advisor with over 15 years of experience in delivering complex technology projects, digital and business transformations, and scaling start-ups. With experience in the private sector and development and humanitarian space, Mohamed brings innovation and expertise in end-to-end project execution, stakeholder engagement, and ensuring on-time, within-budget delivery.",
-    twitterUrl: "https://twitter.com/mohamedosman",
-    linkedinUrl: "https://www.linkedin.com/in/mohamedosman/",
+
+  },
+  {
+    name: "Ahmed Mohamed",
+  role: "Senior Full Stack Developer",
+    imageUrl: "/ahmed.jpg",
+    bio: "A highly skilled and versatile Senior Full Stack Developer with over a decade of experience building robust, scalable, and user-centric web and mobile applications. Proficient in front-end and back-end technologies including JavaScript, React, React Native, Node.js, and cloud platforms such as AWS and Firebase. Adept at leading development teams, architecting solutions, and translating business requirements into functional software. Known for writing clean, maintainable code and delivering projects that drive value and efficiency.",
+   
   },
 // 
 ];
@@ -56,9 +61,9 @@ export default function Story() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
-                  <div className="h-64 overflow-hidden">
+                  <div className="h-82 overflow-hidden">
                     <img
-                      src={member.imageUrl || "/placeholder.svg?height=400&width=400"}
+                      src={member.imageUrl || "/placeholder.svg?height=800&width=800"}
                       alt={member.name}
                       className="w-full h-full object-cover object-center transition-transform hover:scale-105"
                     />
@@ -67,26 +72,7 @@ export default function Story() {
                     <h3 className="text-xl font-semibold text-[#212245]">{member.name}</h3>
                     <p className="text-[#64C6C4] font-medium mb-4">{member.role}</p>
                     <p className="text-slate-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
-                    <div className="flex space-x-3">
-                      <a
-                        href={member.twitterUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 text-slate-600 hover:text-[#1DA1F2] hover:bg-slate-100 rounded-full transition-colors"
-                        aria-label={`${member.name}'s Twitter`}
-                      >
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                      <a
-                        href={member.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 text-slate-600 hover:text-[#0077B5] hover:bg-slate-100 rounded-full transition-colors"
-                        aria-label={`${member.name}'s LinkedIn`}
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    </div>
+                    
                   </div>
                 </div>
               ))}
