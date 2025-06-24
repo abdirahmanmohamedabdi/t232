@@ -4,19 +4,13 @@ import Link from "next/link";
 
 const teamMembers = [
   {
-    name: "Anna Grabowski",
-    role: "Social Impact Professional",
-    imageUrl: "/anna.jpeg",
-    bio: "Anna Grabowski is a dedicated social impact professional with extensive experience in refugee resettlement and programming, education, child and youth mental health and psychosocial support (MHPSS), and sustainable food systems. With a background in program management, grantmaking, and stakeholder engagement, Anna has successfully led initiatives that enhance organizational effectiveness, foster strategic partnerships, and drive systemic change. Anna is committed to creating sustainable solutions that empower vulnerable communities. Passionate about equity, inclusion, innovation, and cross-sector collaboration, she is dedicated to advocating for impactful, community-driven change.",
+    name: "Jamila Abdi",
+    role: "Founder",
+    imageUrl: "/jamila.jpeg",
+    bio: "Our founder is a dedicated Kenyan humanitarian and development expert with over a decade of experience working with the United Nations and various government agencies across Africa.",
    
   },
-  {
-    name: "Mohamed Osman",
-    role: "Technology and Business Advisor",
-    imageUrl: "/Mohamed.jpg",
-    bio: "Mohamed Osman is a strategic and results-driven Technology and Business Advisor with over 15 years of experience in delivering complex technology projects, digital and business transformations, and scaling start-ups. With experience in the private sector and development and humanitarian space, Mohamed brings innovation and expertise in end-to-end project execution, stakeholder engagement, and ensuring on-time, within-budget delivery.",
-
-  },
+ 
   {
     name: "Ahmed Mohamed",
   role: "Senior Full Stack Developer",
